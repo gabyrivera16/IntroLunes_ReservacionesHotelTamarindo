@@ -1,24 +1,28 @@
 
-package com.sc202.proyectofinal2;
+package com.sc202.proyectofinal4;
 
+import static com.sc202.proyectofinal4.Reserva.obtenerCliente;
 
 public class Factura {
-    
-private int idFactura;
-    private String Cliente;
-    private int idHabitacion;
+    private int idFactura;
+    private int idCliente;
+    private String idHabitacion;
     private int cantDias;
+    private int extras;
     private int monto;
+    private String metodoDePago;
 
     public Factura() {
     }
 
-    public Factura(int idFactura, String Cliente, int idHabitacion, int cantDias, int monto) {
+    public Factura(int idFactura, int idCliente, String idHabitacion, int cantDias, int extras, int monto, String metodoDePago) {
         this.idFactura = idFactura;
-        this.Cliente = Cliente;
+        this.idCliente = idCliente;
         this.idHabitacion = idHabitacion;
         this.cantDias = cantDias;
+        this.extras = extras;
         this.monto = monto;
+        this.metodoDePago = metodoDePago;
     }
 
     public int getIdFactura() {
@@ -29,19 +33,19 @@ private int idFactura;
         this.idFactura = idFactura;
     }
 
-    public String getCliente() {
-        return Cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setCliente(String Cliente) {
-        this.Cliente = Cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public int getIdHabitacion() {
+    public String getIdHabitacion() {
         return idHabitacion;
     }
 
-    public void setIdHabitacion(int idHabitacion) {
+    public void setIdHabitacion(String idHabitacion) {
         this.idHabitacion = idHabitacion;
     }
 
@@ -53,6 +57,14 @@ private int idFactura;
         this.cantDias = cantDias;
     }
 
+    public int getExtras() {
+        return extras;
+    }
+
+    public void setExtras(int extras) {
+        this.extras = extras;
+    }
+
     public int getMonto() {
         return monto;
     }
@@ -61,15 +73,21 @@ private int idFactura;
         this.monto = monto;
     }
 
+    public String getMetodoDePago() {
+        return metodoDePago;
+    }
+
+    public void setMetodoDePago(String metodoDePago) {
+        this.metodoDePago = metodoDePago;
+    }
+    
     @Override
     public String toString() {
         return "Id Factura: " + idFactura 
-                + "\n   - Cliente: " + Cliente 
+                + "\n   - Cliente: " + obtenerCliente(idCliente) 
                 + "\n   - Número de Habitación: " + idHabitacion 
                 + "\n   - Cantidad de Noches: " + cantDias 
-                + "\n   - Monto a pagar: " + monto;
-        
-}
-    
-    
+                + "\n   - Monto a pagar: " + monto
+                + "\n   - Metodo de pago: " + metodoDePago;
+    }
 }

@@ -1,10 +1,8 @@
 
-package com.sc202.proyectofinal2;
-
+package com.sc202.proyectofinal4;
 
 public class Habitacion {
-    
-private int id;
+    private String id;
     private String tipo;
     private int nCamas;
     private boolean disponibilidad;
@@ -13,7 +11,7 @@ private int id;
     public Habitacion() {
     }
 
-    public Habitacion(int id, String tipo, int nCamas, boolean disponibilidad, int precioxNoche) {
+    public Habitacion(String id, String tipo, int nCamas, boolean disponibilidad, int precioxNoche) {
         this.id = id;
         this.tipo = tipo;
         this.nCamas = nCamas;
@@ -21,11 +19,11 @@ private int id;
         this.precioxNoche = precioxNoche;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -61,7 +59,9 @@ private int id;
         this.precioxNoche = precioxNoche;
     }
 
-    
-    
-}
+    @Override
+    public String toString() {
+        return "Habitacion{" + "id=" + id + ", tipo=" + tipo + ", nCamas=" + nCamas + ", disponibilidad=" + disponibilidad + ", precioxNoche=" + precioxNoche + '}';
+    }
 
+}

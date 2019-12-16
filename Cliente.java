@@ -1,10 +1,8 @@
 
-package com.sc202.proyectofinal2;
-
+package com.sc202.proyectofinal4;
 
 public class Cliente {
-    
-private int idCliente;
+    private int idCliente;
     private String nombre;
     private String apellido;
     private int telefono;
@@ -50,5 +48,15 @@ private int idCliente;
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "Cedula: " + idCliente 
+                + "\n - Nombre: " + nombre 
+                + "\n - Apellido: " + apellido 
+                + "\n - Telefono: " + telefono;
+    }
+    
     
 }
+
